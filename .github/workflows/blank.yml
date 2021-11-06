@@ -1,10 +1,11 @@
 name: Build Docker Images
 
-on:
-  workflow_dispatch:
+watch:
+    types: [started]
 
 jobs:
   dockerhub:
+    if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
 
     steps:
