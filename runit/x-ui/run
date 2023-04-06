@@ -1,4 +1,12 @@
 #!/bin/sh
 exec 2>&1
 echo -e  "starting x-ui..."
+
+if [ -z "$XUI_WEB_PORT" ]; then
+    echo -e "use default port 54321"
+else
+    /usr/local/x-ui/x-ui setting -port $XUI_WEB_PORT
+    echo ""
+fi
+
 cd /usr/local/x-ui/ && exec chpst -e /usr/local/x-ui/ /usr/local/x-ui/x-ui

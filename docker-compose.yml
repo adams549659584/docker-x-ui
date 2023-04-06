@@ -1,12 +1,14 @@
 version: '3.7'
 
 services:
-  x-ui:
+  xui:
     image: adams549659584/x-ui:latest
     container_name: x-ui
-    # volumes:
-    #   - ./db:/etc/x-ui/ #./x-ui.db
+    volumes:
+      - ./db:/etc/x-ui/ #./x-ui.db
     #   - ./v2-ui.db:/etc/v2-ui/v2-ui.db #migrate v2_ui
     restart: always
     # network_mode: host
+    # environment:
+    #   XUI_WEB_PORT: 54322    
     

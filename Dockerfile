@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV X_UI_VERSION=0.3.2
+ARG X_UI_VERSION=0.3.2
 
 WORKDIR /usr/local/
 COPY x-ui.sh /usr/local/x-ui.sh
