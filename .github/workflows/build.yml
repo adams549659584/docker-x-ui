@@ -38,7 +38,7 @@ jobs:
           context: .            
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/x-ui:${{ github.ref_name }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/x-ui:${{ steps.get_version.outputs.X_UI_VERSION }}
             ${{ secrets.DOCKERHUB_USERNAME }}/x-ui:latest
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/x-ui:cache
           cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/x-ui:cache,mode=max         
